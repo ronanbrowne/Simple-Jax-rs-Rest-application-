@@ -8,30 +8,34 @@
 
 
 plugins {
-    // Apply the java-library plugin to add support for Java Library
-    id 'java-library'
+	// Apply the java-library plugin to add support for Java Library
+	id 'java-library'
 	id 'war'
 	id 'eclipse-wtp'
-	
+
 }
 
 
 repositories {
-    // Use jcenter for resolving dependencies.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+	// Use jcenter for resolving dependencies.
+	// You can declare any Maven/Ivy/file repository here.
+	jcenter()
 }
 
 dependencies {
-    // This dependency is exported to consumers, that is to say found on their compile classpath.
-    //api 'org.apache.commons:commons-math3:3.6.1'
+	// This dependency is exported to consumers, that is to say found on their compile classpath.
+	//api 'org.apache.commons:commons-math3:3.6.1'
 
-    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
-    implementation 'com.google.guava:guava:28.0-jre'
-	implementation 'org.glassfish.jersey.containers:jersey-container-servlet:2.25.1'
+	// This dependency is used internally, and not exposed to consumers on their own compile classpath.
+	implementation 'com.google.guava:guava:28.0-jre'
+	implementation 'org.glassfish.jersey.containers:jersey-container-servlet:2.29.1'
+	// https://mvnrepository.com/artifact/org.glassfish.jersey.inject/project
+	implementation group: 'org.glassfish.jersey.inject', name: 'jersey-hk2', version: '2.29.1'
 
 
-    // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
-	
+	// Use JUnit test framework
+	testImplementation 'junit:junit:4.12'
+	testImplementation group: 'org.glassfish.jersey.test-framework', name: 'jersey-test-framework-core', version: '2.29.1'
+	testCompile group: 'org.glassfish.jersey.test-framework.providers', name: 'jersey-test-framework-provider-grizzly2', version: '2.29.1'
+
 }
