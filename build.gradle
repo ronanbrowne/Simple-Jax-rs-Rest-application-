@@ -31,6 +31,8 @@ dependencies {
 	implementation 'org.glassfish.jersey.containers:jersey-container-servlet:2.29.1'
 	// https://mvnrepository.com/artifact/org.glassfish.jersey.inject/project
 	implementation group: 'org.glassfish.jersey.inject', name: 'jersey-hk2', version: '2.29.1'
+	implementation 'org.glassfish.jersey.media:jersey-media-json-jackson:2.29.1'
+	implementation 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-providers:2.10.1'	
 
 
 	// Use JUnit test framework
